@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>结果</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <style>
+    body {
+      background-color: #bae0f9;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%%;
+      max-width: 100%%;
+      height: auto;
+      border-radius: 12px;
+    }
+    iframe {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>你的小鱼回应如下：</h1>
+  <div id="image-container"></div>
+  <iframe id="bgm" width="0" height="0" src="https://www.youtube.com/embed/r_sIxOWwJzI?autoplay=1&loop=1&playlist=r_sIxOWwJzI" frameborder="0" allow="autoplay"></iframe>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const choice = params.get("choice");
+    const img = document.createElement("img");
+    if (choice === "kiss") {
+      img.src = "kiss.jpg";
+      img.alt = "亲亲小鱼的结果图";
+    } else {
+      img.src = "refuse.jpg";
+      img.alt = "不亲小鱼的结果图";
+    }
+    document.getElementById("image-container").appendChild(img);
+  </script>
+</body>
+</html>
